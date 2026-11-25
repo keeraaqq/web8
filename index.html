@@ -23,7 +23,11 @@
             <form id="feedback-form" action="#">
                 <label class="field">
                     <span>ФИО</span>
-                    <input type="text" name="fio" autocomplete="name" required>
+                    <input type="text" name="fio" autocomplete="name"
+                           minlength="2" maxlength="120"
+                           pattern="[А-Яа-яЁёA-Za-z\s\-]+"
+                           title="Только буквы, пробел и дефис"
+                           required>
                 </label>
                 <label class="field">
                     <span>Email</span>
@@ -31,15 +35,19 @@
                 </label>
                 <label class="field">
                     <span>Телефон</span>
-                    <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+                    <input type="tel" name="phone" autocomplete="tel" inputmode="tel"
+                           pattern="\+?[0-9\s\-\(\)]{10,20}"
+                           title="Только цифры, +, пробел, дефис и скобки (10–20 символов)"
+                           minlength="10" maxlength="20"
+                           required>
                 </label>
                 <label class="field">
                     <span>Организация</span>
-                    <input type="text" name="organization" autocomplete="organization">
+                    <input type="text" name="organization" autocomplete="organization" required>
                 </label>
                 <label class="field">
                     <span>Сообщение</span>
-                    <textarea name="message" rows="3" required></textarea>
+                    <textarea name="message" rows="3" minlength="5" maxlength="2000" required></textarea>
                 </label>
                 <label class="consent">
                     <input type="checkbox" name="consent" required>
